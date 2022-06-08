@@ -4,13 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 @Getter
 @Setter
 public class User extends BaseEntity{
     private String name;
-    private String type;
-    private String stat;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
 }
