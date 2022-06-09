@@ -3,9 +3,7 @@ package com.ssg.task.api.db.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,8 @@ import java.util.List;
 @Setter
 public class Item extends BaseEntity {
     private String name;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private Type type;
     private Integer price;
     private String displayStartDate;
     private String displayEndDate;

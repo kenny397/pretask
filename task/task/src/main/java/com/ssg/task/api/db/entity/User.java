@@ -13,7 +13,7 @@ import javax.persistence.Enumerated;
 public class User extends BaseEntity{
     private String name;
     @Enumerated(EnumType.STRING)
-    private UserType type;
+    private Type type;
     @Enumerated(EnumType.STRING)
     private UserStatus status;
 
