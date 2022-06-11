@@ -10,5 +10,5 @@ import java.util.List;
 public interface ItemService {
     public String addItem(ItemRequestDto itemRequestDto);
     public void deleteItem(String itemName);
-    public List<ItemDto> isPurchasItem(String userName);
+    public List<ItemDto> findPurchaseItem(String userName);
 }

@@ -53,8 +53,7 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
-    public List<ItemDto> isPurchasItem(String userName) {
-        //탈퇴한 회원 처리
+    public List<ItemDto> findPurchaseItem(String userName) {
         Optional<User> userOptional = userRepository.findByName(userName);
         userOptional.orElseThrow(() -> new NameNotFoundException(userName));
         User user = userOptional.get();
@@ -64,7 +63,7 @@ public class ItemServiceImpl implements ItemService{
             ItemSearchCondition itemSearchCondition=new ItemSearchCondition();
             itemSearchCondition.setUserName(userName);
             itemSearchCondition.setUserType(user.getType());
-            List<ItemDto> purchase = itemRepository.isPurchase(itemSearchCondition);
+            List<ItemDto> purchase = itemRepository.findPurchaseItem(itemSearchCondition);
             return purchase;
         }
 

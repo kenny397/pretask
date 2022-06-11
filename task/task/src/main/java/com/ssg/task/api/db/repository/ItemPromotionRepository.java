@@ -13,5 +13,4 @@ public interface ItemPromotionRepository extends JpaRepository<ItemPromotion,Lon
     void delete(ItemPromotion itemPromotion);
     Optional<ItemPromotion> findByPromotion(Promotion promotion);
     Optional<ItemPromotion> findByItem(Item item);
-
 }

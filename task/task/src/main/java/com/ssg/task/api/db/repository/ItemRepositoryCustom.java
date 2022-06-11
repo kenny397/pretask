@@ -8,5 +8,5 @@ import com.ssg.task.api.dto.ItemSearchCondition;
 import java.util.List;
 
 public interface ItemRepositoryCustom {
-    List<ItemDto> isPurchase(ItemSearchCondition itemSearchCondition);
+    List<ItemDto> findPurchaseItem(ItemSearchCondition itemSearchCondition);
 }

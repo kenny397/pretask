@@ -24,7 +24,7 @@ public class ItemRepositoryImpl implements ItemRepositoryCustom{
     }
 
     @Override
-    public List<ItemDto> isPurchase(ItemSearchCondition itemSearchCondition) {
+    public List<ItemDto> findPurchaseItem(ItemSearchCondition itemSearchCondition) {
         return queryFactory
                 .select(new QItemDto(item.name, item.price))
                 .from(item)

@@ -1,7 +1,6 @@
 package com.ssg.task.api.controller;
 
 import com.ssg.task.api.dto.ItemDto;
-import com.ssg.task.api.dto.PromotionDto;
 import com.ssg.task.api.dto.request.ItemRequestDto;
 import com.ssg.task.api.dto.response.BaseResponseBody;
 import com.ssg.task.api.service.ItemService;
@@ -33,7 +32,7 @@ public class ItemController {
 
     @GetMapping("/purchase/{userName}")
     public ResponseEntity<List<ItemDto>> isPurchaseItem(@PathVariable("userName")String userName){
-        List<ItemDto> itemList= itemService.isPurchasItem(userName);
+        List<ItemDto> itemList= itemService.findPurchaseItem(userName);
         return ResponseEntity.status(200).body(itemList);
     }
 
