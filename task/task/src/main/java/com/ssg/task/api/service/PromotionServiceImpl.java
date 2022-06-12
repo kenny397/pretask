@@ -72,7 +72,7 @@ public class PromotionServiceImpl implements PromotionService{
         Item item = itemOptional.get();
         PromotionSearchCondition searchCondition=new PromotionSearchCondition();
         searchCondition.setItemName(itemName);
-        List<ItemPromotion> findItemPromotions = promotionRepository.findPromotion(searchCondition);
+        List<ItemPromotion> findItemPromotions = itemPromotionRepository.findPromotion(searchCondition);
 
         ItemPromotionResponseDto itemPromotionResponseDto = new ItemPromotionResponseDto();
         itemPromotionResponseDto.setItemName(item.getName());

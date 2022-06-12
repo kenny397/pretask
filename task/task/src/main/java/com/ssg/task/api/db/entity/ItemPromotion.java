@@ -15,4 +15,5 @@ public class ItemPromotion extends BaseEntity{
     private Item item;
     @ManyToOne(fetch = FetchType.LAZY)
     private Promotion promotion;
+
 }
