@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
+//todo 빌더사용해서 가독성 높이기
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
