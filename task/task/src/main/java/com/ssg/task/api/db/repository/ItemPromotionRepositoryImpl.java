@@ -14,10 +14,10 @@ import static com.ssg.task.api.db.entity.QItem.item;
 import static com.ssg.task.api.db.entity.QItemPromotion.itemPromotion;
 import static com.ssg.task.api.db.entity.QPromotion.promotion;
 
-public class PromotionRepositoryImpl implements PromotionRepositoryCustom{
+public class ItemPromotionRepositoryImpl implements ItemPromotionRepositoryCustom {
     private final JPAQueryFactory queryFactory;
 
-    public PromotionRepositoryImpl(EntityManager em){
+    public ItemPromotionRepositoryImpl(EntityManager em){
         this.queryFactory=new JPAQueryFactory(em);
     }
 
@@ -30,7 +30,7 @@ public class PromotionRepositoryImpl implements PromotionRepositoryCustom{
                 .join(itemPromotion.promotion, promotion).fetchJoin()
                 .where(item.name.eq(searchCondition.getItemName()),vaildItemDate(),vaildPromotionDate())
                 .fetch();
-        HashMap<Item,List<Promotion>>map=new HashMap<>();
+
 
         return fetch;
     }

@@ -5,6 +5,6 @@ import com.ssg.task.api.dto.PromotionSearchCondition;
 
 import java.util.List;
 
-public interface PromotionRepositoryCustom {
+public interface ItemPromotionRepositoryCustom {
     List<ItemPromotion> findPromotion(PromotionSearchCondition searchCondition);
 }
