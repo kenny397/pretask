@@ -19,7 +19,7 @@ public class UserController {
     @PostMapping("/signup")
     public ResponseEntity<BaseResponseBody> signUp(@RequestBody UserRequestDto userRequestDto){
         String name = userService.signUp(userRequestDto);
-        return ResponseEntity.status(200).body(BaseResponseBody.of(200,name+"님이 회원가입에 성공하셨습니다"));
+        return ResponseEntity.status(201).body(BaseResponseBody.of(201,name+"님이 회원가입에 성공하셨습니다"));
     }
 
     @DeleteMapping("/{userName}")

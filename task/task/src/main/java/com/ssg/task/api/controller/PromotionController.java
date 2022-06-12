@@ -21,7 +21,7 @@ public class PromotionController {
     @PostMapping("")
     public ResponseEntity<BaseResponseBody> addPromotion(@RequestBody PromotionRequestDto promotionRequestDto){
         promotionService.addPromotion(promotionRequestDto);
-        return ResponseEntity.status(200).body(BaseResponseBody.of(200,promotionRequestDto.getName()+"님이 프로모션 추가에 성공하셨습니다"));
+        return ResponseEntity.status(201).body(BaseResponseBody.of(201,promotionRequestDto.getName()+"님이 프로모션 추가에 성공하셨습니다"));
     }
 
     @DeleteMapping("/{name}")
@@ -31,9 +31,9 @@ public class PromotionController {
     }
 
     @PostMapping("/items")
-    public ResponseEntity<BaseResponseBody> setPromotionItems(@RequestBody PromotionItemsRequestDto promotionItemsRequestDto){
+    public ResponseEntity<BaseResponseBody> addItemsToPromotion(@RequestBody PromotionItemsRequestDto promotionItemsRequestDto){
         promotionService.addItemsToPromotion(promotionItemsRequestDto);
-        return ResponseEntity.status(200).body(BaseResponseBody.of(200,promotionItemsRequestDto.getPromotion()+"프로모션에 "+promotionItemsRequestDto.getItems()+"상품이 추가되었습니다"));
+        return ResponseEntity.status(201).body(BaseResponseBody.of(201,promotionItemsRequestDto.getPromotion()+"프로모션에 "+promotionItemsRequestDto.getItems()+"상품이 추가되었습니다"));
     }
 
     @GetMapping("/{itemName}")

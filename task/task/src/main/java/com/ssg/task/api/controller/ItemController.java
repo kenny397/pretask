@@ -21,7 +21,7 @@ public class ItemController {
     @PostMapping("")
     public ResponseEntity<BaseResponseBody> addItem(@RequestBody ItemRequestDto itemRequestDto){
         itemService.addItem(itemRequestDto);
-        return ResponseEntity.status(200).body(BaseResponseBody.of(200,itemRequestDto.getName()+" 아이템추가에 성공하셨습니다"));
+        return ResponseEntity.status(201).body(BaseResponseBody.of(201,itemRequestDto.getName()+" 아이템추가에 성공하셨습니다"));
     }
 
     @DeleteMapping("/{name}")
@@ -31,7 +31,7 @@ public class ItemController {
     }
 
     @GetMapping("/purchase/{userName}")
-    public ResponseEntity<List<ItemDto>> isPurchaseItem(@PathVariable("userName")String userName){
+    public ResponseEntity<List<ItemDto>> findPurchaseItem(@PathVariable("userName")String userName){
         List<ItemDto> itemList= itemService.findPurchaseItem(userName);
         return ResponseEntity.status(200).body(itemList);
     }
